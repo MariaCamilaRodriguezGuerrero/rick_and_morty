@@ -1,0 +1,88 @@
+*{
+   padding:0;
+   margin:0;
+   box-sizing: border-box;
+ }
+ 
+
+ 
+
+.App{
+   /* display:flex; */
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   padding-top: 15px;
+   font-family: Lato, sans-serif;
+   text-align: center;
+ }
+
+ /* LOGING */
+
+ .form-label {
+  font-weight: bold;
+  font-size: 20px ;
+}
+
+ .form-input {
+  border: 1px solid #ccc;
+  padding: 8px;
+  border-radius: 4px;
+  width: 90%;
+}
+
+.form-error {
+  color: red;
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+button {
+  width: 100px;
+  background-color: #4CAF50; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  transition: background-color 0.5s ease; /* Transición suave */
+  background-image: linear-gradient(to right, #75A3FF, #FF5E5E, #FFE75E, #87FF5E, #FF5EBA, #75A3FF); /* Imagen con efecto arcoíris */
+  background-size: 200%; /* Asegura que la imagen cubra todo el botón */
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-grow: 1; /* Distribuye equitativamente el espacio disponible */
+  margin: 0 5px; /* Espacio entre los botones */
+}
+
+button:hover {
+  background-position: right center; /* Mueve la imagen al final del botón */
+  background-color: transparent; /* Hace transparente el color de fondo del botón */
+}
+
+.form-container {
+  background-image: url('./Estilos/Loging.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  max-width: 400px; /* Establece un ancho máximo para el contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente en la página */
+  padding: 30px; /* Agrega un poco de espacio alrededor del formulario */
+}
+
+/* NAV */
+
+.nav-container {
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between; /* Distribuye los elementos a lo largo de la barra */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */  
+  background-image: url('./Estilos/Nav.jpg');
+  /* Ajusta los valores de background-size y background-position según tu imagen */
+  background-size: cover;
+  background-position: center;
+}
+
+
+ 

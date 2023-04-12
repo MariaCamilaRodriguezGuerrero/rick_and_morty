@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 
 export function Card(props) {
+
    
    const [isFav, setIsFav] = useState(false)
 

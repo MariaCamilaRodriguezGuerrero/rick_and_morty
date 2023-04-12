@@ -13,17 +13,15 @@ export default function Nav(props) {
       }
     
 
-    return (
-      
-        <div>
-            <SearchBar onSearch={props.onSearch}/>
+    return (      
+        <div className="nav-container">
+            <SearchBar
+            SearchBar style={{ width: "300px" }} onSearch={props.onSearch}/>
             <Link to = "/about" ><button>About</button></Link>
             <button onClick={backToHome}>Home</button>           
            <Link to ="/"> <button>Log out</button> </Link>
            <Link to = "/favorites" ><button>Favorites</button></Link>
-
-            <hr/>
-            
+                        
         </div>
     )
 }

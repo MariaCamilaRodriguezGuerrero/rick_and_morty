@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from 'react'
 import validation from "../validation"
+import "../index.css"
 
 function Form({ login }) {
     const [userData, setUserData] = useState({
@@ -20,34 +21,44 @@ function Form({ login }) {
     }
 
     return (
+        <div className="form-container">
         <form onSubmit={handleSubmit}>
             <div>
-                <label htmlFor="email"> email:</label>
+                <label
+                htmlFor="email"
+                className="form-label"
+                > email:</label>
                 <br />
                 <input
                     name="email"
                     type="text"
                     value={userData.email}
                     onChange={handleChange}
+                    className="form-input"
                 />
-                <p>{errors.email}</p>
+                <p className="form-error">{errors.email}</p>
             </div>
 
             <div>
-                <label htmlFor="password">password:</label>
+                <label 
+                htmlFor="password"
+                className="form-label"
+                >password:</label>
                 <br />
                 <input
                     name="password"
                     type={"password"}
                     value={userData.password}
                     onChange={handleChange}
+                    className="form-input"
                 />
-                <p>{errors.password}</p>
+                <p className="form-error">{errors.password}</p>
             </div>
             <br />
             <button>Submit</button>
 
         </form>
+        </div>
     )
 
 
