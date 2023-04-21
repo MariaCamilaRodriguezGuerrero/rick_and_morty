@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export function Card(props) {
 
-   
+
    const [isFav, setIsFav] = useState(false)
 
    const handleFavorite = () => {
@@ -27,17 +27,18 @@ export function Card(props) {
       });
    }, [props.myFavorites]);
 
-   
+
    return (
-      <div>
-                 {
-            isFav ? (
-               <button onClick={handleFavorite}>❤️</button>
+      <div className="card">
+         <div className="button-container">
+            {isFav ? (
+               <button onClick={handleFavorite} style={{borderRadius: '50%'}} >❤️</button>
             ) : (
-               <button onClick={handleFavorite}>🤍</button>
-            )
-         }
-          <button onClick={() => props.onClose(props.id)}>X</button>
+               <button onClick={handleFavorite} style={{borderRadius: '50%'}}>🥒</button>
+            )}
+            <button onClick={() => props.onClose(props.id)} style={{borderRadius: '50%'}}>X</button>
+         </div>
+
          {props.key}
          <Link to={`/detail/${props.id}`}> <h2>{props.name}</h2></Link>
          <h2>{props.status}</h2>

@@ -21,17 +21,17 @@ export default function Detail() {
 
 
     return (
-        <div>
+        <div className="detail">
             <h1>Estos son los detalles de tu personaje</h1>
             {character.name ?(
                 <>
                 <h2>
                 {character.name}
             </h2>
-            <li>Status {character.status}</li>
-            <li>species {character.species} </li>
-            <li>gender {character.gender}</li>
-            <p> origin {character.origin?.name}</p>           
+            <li>Status: {character.status}</li>
+            <li>Species: {character.species} </li>
+            <li>Gender: {character.gender}</li>
+            <li> Origin: {character.origin?.name}</li>           
             <img src={character.image} alt={character.name} /> 
                 </>
             ):(

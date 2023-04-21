@@ -1,9 +1,48 @@
+// const express = require('express');
+// const router = require("./routes/index")
+// const server = express();
+// const PORT = 3001;
+// const { conn } = require('./DB_connection');
+
+// server.use(express.json())// SIEMPRE TIEN QUE IR DE PRIMERAS !!!
+
+// server.use((req, res, next) => {
+//    res.header('Access-Control-Allow-Origin', '*');
+//    res.header('Access-Control-Allow-Credentials', 'true');
+//    res.header(
+//       'Access-Control-Allow-Headers',
+//       'Origin, X-Requested-With, Content-Type, Accept'
+//    );
+//    res.header(
+//       'Access-Control-Allow-Methods',
+//       'GET, POST, OPTIONS, PUT, DELETE'
+//    );
+//    next();
+// });
+ 
+//  // Usar el middleware
+//  server.use('/rickandmorty',router);
+ 
+
+// server.listen(PORT, () => {
+//    console.log('Server raised in port: ' + PORT);
+// });
+
+// conn.sync({ force: false }).then(() => {
+//    console.log('Sequelize synced with database successfully!');
+//    app.listen(3000, () => {
+//      console.log('Server listening on port 3000!');
+//    });
+//  }).catch((error) => {
+//    console.error('Unable to sync Sequelize with database:', error);
+//  });
 const express = require('express');
 const router = require("./routes/index")
 const server = express();
 const PORT = 3001;
+const { conn } = require('./DB_connection');
 
-server.use(express.json())// SIEMPRE TIEN QUE IR DE PRIMERAS !!!
+server.use(express.json())
 
 server.use((req, res, next) => {
    res.header('Access-Control-Allow-Origin', '*');
@@ -19,17 +58,16 @@ server.use((req, res, next) => {
    next();
 });
 
- 
- // Usar el middleware
- server.use('/rickandmorty',router);
- 
+server.use('/rickandmorty', router);
 
- 
-
-server.listen(PORT, () => {
-   console.log('Server raised in port: ' + PORT);
+conn.sync({ force: false }).then(() => {
+   console.log('Sequelize synced with database successfully!');
+   server.listen(PORT, () => {
+      console.log('Server listening on port ' + PORT);
+   });
+}).catch((error) => {
+   console.error('Unable to sync Sequelize with database:', error);
 });
-
 
 
 

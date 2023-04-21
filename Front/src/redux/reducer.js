@@ -30,7 +30,9 @@ const rootReducer = (state = initialState, action) => {
         //     }
 
         case 'REMOVE_FAV':
-      return { ...state, myFavorites: action.payload }
+            return { ...state, myFavorites: action.payload,
+                allCharacters:action.payload
+             }
 
 
         case "FILTER":
@@ -42,7 +44,6 @@ const rootReducer = (state = initialState, action) => {
             }
 
         case "ORDER":
-            console.log("esto ocurre " + action.payload)
             return {
                 ...state,
                 myFavorites:

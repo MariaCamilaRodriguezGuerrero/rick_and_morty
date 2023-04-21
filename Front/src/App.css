@@ -52,6 +52,7 @@ button {
   cursor: pointer;
   flex-grow: 1; /* Distribuye equitativamente el espacio disponible */
   margin: 0 5px; /* Espacio entre los botones */
+  border: 2px solid #000
 }
 
 button:hover {
@@ -82,7 +83,99 @@ button:hover {
   /* Ajusta los valores de background-size y background-position según tu imagen */
   background-size: cover;
   background-position: center;
+  
+}
+
+/* Card */
+.card {
+  width: 20%;
+  height: 10%;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #75A3FF, #FF5E5E, #FFE75E, #87FF5E, #FF5EBA, #75A3FF);
+  background-size: 600% 100%;
+  background-position: 0 0;
+  margin: 1%;
+  position: relative;
+  overflow: hidden;
+  transition: background-position 0.5s ease-out;
+}
+.card img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+@keyframes rainbow {
+  0% {
+    background-position: 0 0;
+  }
+   100% {
+    background-position: 600% 0; /* Mueve el gradiente de color a lo largo de la tarjeta */
+  }
+}
+
+.button-container {
+  margin-top: 1%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; /* para separar los botones del contenido de la tarjeta */
 }
 
 
- 
+.cards {
+  width: 100%;
+  height: 30%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;     
+}
+
+.detail{
+  width: 100%;
+  height: 10%;
+  border: 1px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Agrega una sombra */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to right, #75A3FF, #FF5E5E, #FFE75E, #87FF5E, #FF5EBA, #75A3FF);
+  background-size: 600% 100%; /* Ajusta el tamaño de la imagen de fondo */
+  background-position: 0 0; /* Ajusta la posición de la imagen de fondo */
+   
+}
+.detail img {
+  border-radius: 50%;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.about{
+  background-image: linear-gradient(to right, #75A3FF, #FF5E5E, #FFE75E, #87FF5E, #FF5EBA, #75A3FF);
+  text-align: left;
+}

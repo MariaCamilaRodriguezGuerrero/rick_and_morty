@@ -44,9 +44,11 @@ function Favorites() {
             </select>
           </div>
 
+          <div className="cards">
+
     {favorites.map((personaje) => {
       return (
-        <div>                    
+                           
           <Card
             key={personaje.id}
             id={personaje.id}
@@ -58,10 +60,11 @@ function Favorites() {
             image={personaje.image}
             onClose={onClose}
           />
-        </div>
+        
       )
     }
     )}
+    </div>
 
     </div>
   )
